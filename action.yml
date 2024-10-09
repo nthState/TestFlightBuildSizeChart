@@ -1,0 +1,32 @@
+name: 'TestFlight Build Size Chart Generator'
+description: 'Generate a chart of app sizes from TestFlight'
+inputs:
+  ISSUER_ID:
+    description: 'Issuer Id from AppStore Connect'
+    required: true
+  KEY_ID:
+    description: 'Key ID from AppStore Connect'
+    required: true
+  PRIVATE_KEY:
+    description: 'Private Key from AppStore Connect'
+    required: true
+  APP_ID:
+    description: 'App ID from AppStore Connect'
+    required: true
+  DEVICES:
+    description: 'Devices to generate chart for'
+    required: true
+  MAX_VERSIONS:
+    description: 'Maximum number of versions to fetch'
+    required: true
+  EXPORT_AS:
+    description: 'The build number to target'
+    required: true
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+branding:
+  icon: 'mic'
+  color: 'blue'
+
